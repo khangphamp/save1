@@ -1,0 +1,41 @@
+version: '2.0'
+services:
+  node-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: node-chrome
+    volumes:
+      - .:/usr/src/service/
+      - node_modules:/usr/src/service/node_modules
+    working_dir: /usr/src/service/
+    links:
+      - mongo-db
+    depends_on:
+      - mongo-db
+    env_file:
+      - .env
+    ports:
+      - $SERVER_PORT:$SERVER_PORT
+    environment:
+      MONGO_URL_CONNECT: mongodb://$MONGODB_USER:$MONGODB_PASSWORD@mongo-db:27017
+    command: bash -c "npm i && npm run dev"
+    container_name: bill-node-app
+    
+  mongo-db:
+    image: mongo
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - mongodb_bill:/data/db
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: $MONGODB_USER
+      MONGO_INITDB_ROOT_PASSWORD: $MONGODB_PASSWORD
+    container_name: bill-mongodb
+
+volumes:
+  node_modules:
+  mongodb_bill:

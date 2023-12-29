@@ -1,0 +1,31 @@
+@import '~antd/dist/antd.css';
+
+@import './assets/scss/common.css';
+
+.list-role-actions {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arimo', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+.ql-container.ql-snow {
+    height: 700px;
+}
+
+h2,
+h3,
+h4 {
+  padding: 8px 0 !important;
+  font-weight: 500 !important;
+}
+.ck-content {
+  height: 600px;
+}
+.ant-tag {
+  margin: 0 8px 8px 0 !important;
+} 

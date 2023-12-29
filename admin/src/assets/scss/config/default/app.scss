@@ -1,0 +1,42 @@
+/*
+Template Name: Velzon - Admin & Dashboard Template
+Author: Themesbrand
+Version: 1.6.0
+Website: https://themesbrand.com/
+Contact: support@themesbrand.com
+File: Main Css File
+*/
+
+
+//Fonts
+@import "../../fonts/fonts";
+
+//Core files
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/variables";
+@import "variables";
+@import "./node_modules/bootstrap/scss/mixins";
+
+@import "theme-light";
+@import "theme-dark";
+
+// Structure
+@import "../../structure/topbar";
+@import "../../structure/page-head";
+@import "../../structure/footer";
+@import "../../structure/vertical";
+@import "../../structure/horizontal";
+@import "../../structure/two-column";
+@import "../../structure/layouts";
+
+// Components
+@import "../../components/accordion";
+@import "../../components/helper";
+@import "../../components/forms";
+@import "../../components/widgets";
+@import "../../components/toast";
+
+
+// // Pages
+@import "../../pages/authentication";
+@import "../../pages/dashboard";
